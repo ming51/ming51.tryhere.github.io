@@ -54,9 +54,6 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        document.getElementById("b1").addEventListener("click",test);
-
-
     },
 
     // Update DOM on a Received Event
@@ -67,6 +64,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
+        document.getElementById("fnamelab").innerHTML=sessionStorage.getItem("fname");
 
         console.log('Received Event: ' + id);
     }
@@ -75,7 +73,3 @@ var app = {
 };
 
 app.initialize();
-function test() {
-    sessionStorage.setItem("fname",document.getElementById("fn").value);
-    alert("value is stored");
-}
